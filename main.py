@@ -99,7 +99,6 @@ while not done:
             hoanh.append(event.pos[0])
             tung.append(event.pos[1])
             count += 1
-        print(hoanh, tung)
         
         if count == 2:
             path.append((hoanh[0], tung[0]))
@@ -119,9 +118,8 @@ while not done:
             print(path)
             pygame.draw.lines(screen, (69, 98, 212), False, path, 5)
         
-        
-        
         elif event.type == pygame.QUIT:
             done = True
         pygame.display.flip()
 pygame.quit()
+
