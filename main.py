@@ -69,7 +69,7 @@ for i in range(len(arr)):
 pygame.init()
 size = [440, 660]
 screen = pygame.display.set_mode(size)
-link = "https://pbs.twimg.com/media/FupdQcSXwAsL0_A?format=png&name=900x900"
+link = "https://pbs.twimg.com/media/FxQz1h1aQAIRp94?format=png&name=900x900"
 response = requests.get(link)
 img = pygame.image.load(BytesIO(response.content))
 img = pygame.transform.scale(img, (440, 660))
