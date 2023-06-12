@@ -57,8 +57,7 @@ def get_shortest_path(previous, target):
     return list(reversed(path))
 
 
-
-# Create a graph
+# Tạo graph
 graph = Graph(210)
 for i in range(len(arr)):
     a, b = arr[i], arr_nei[i]
@@ -90,8 +89,12 @@ path = []
 while not done:
     clock.tick(60)
     for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True
+        if event.type == pygame.WINDOWCLOSE:
+            done = True
         if count >= 2:
-            pygame.time.delay(1000000)
+            break
         
         if event.type == pygame.MOUSEBUTTONUP:
             if count >= 2:
@@ -115,7 +118,7 @@ while not done:
                 i = int(i)
                 path.append((h[i-1], t[i-1]))
             path.append((hoanh[1], tung[1]))
-            print(path)
+            #print(path)
             pygame.draw.lines(screen, (69, 98, 212), False, path, 5)
         
         elif event.type == pygame.QUIT:
